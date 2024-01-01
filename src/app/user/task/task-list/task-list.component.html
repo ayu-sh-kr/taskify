@@ -17,7 +17,7 @@
           <div class="text-green-400">{{task.status}}</div>
         }
         <div class="text-xl font-semibold font-poppins-500 mt-3">{{task.title}}</div>
-        <div class="line-clamp-2 text-lg font-poppins-500 font-light h-10">{{task.description}}</div>
+        <div class="line-clamp-1 overflow-hidden text-lg font-poppins-500 font-light"><p>{{task.description}}</p></div>
         <div class="flex justify-around mt-3">
           <div><a (click)="updateStatus('Progress', task)" class="block px-3 py-1 bg-yellow-400 rounded-md hover:cursor-pointer">Progress</a></div>
           <div><a (click)="updateStatus('Completed', task)" class="block px-3 py-1 bg-green-400 rounded-md hover:cursor-pointer">Complete</a></div>
