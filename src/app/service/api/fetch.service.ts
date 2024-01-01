@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 export class FetchService {
   // https://taskify-backend-app-3w9xe.ondigitalocean.app
   // http://localhost:8080
-  baseUrl:string = 'http://localhost:8080';
+  baseUrl:string = 'https://taskify-backend-app-3w9xe.ondigitalocean.app';
   jwtKey!:string;
   userId!:string;
 
