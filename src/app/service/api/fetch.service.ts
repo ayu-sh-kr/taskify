@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
 export class FetchService {
   // https://taskify-backend-app-3w9xe.ondigitalocean.app
   // http://localhost:8080
-  baseUrl:string = 'https://taskify-backend-app-3w9xe.ondigitalocean.app';
+  baseUrl:string = 'http://localhost:8080';
   jwtKey!:string;
   userId!:string;
 
@@ -111,7 +111,7 @@ export class FetchService {
     });
     const data = await response.json();
     console.log(data);
-    return data;
+    return {status: response.status, data: data};
   }
 
   async postWithParam(apiUrl:string, params:URLSearchParams, data:any){
