@@ -1,0 +1,65 @@
+<div class="h-screen min-w-full bg-gray-100 flex justify-center items-center">
+  <div class="bg-white w-[900px] h-[550px] rounded-xl shadow-xl overflow-hidden sm:flex p-4">
+    <div class="sm:w-1/2 sm:h-full p-4">
+      <div class="text-3xl font-poppins-400">
+        <h1>Welcome Again</h1>
+        <p class="font-poppins-200 text-lg mt-2">
+          Please sign in to continue
+        </p>
+      </div>
+        <div class="font-poppins mx-4 mt-8">
+          <label for="name" class="relative flex items-center px-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 absolute ml-2">
+            <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+          </svg>
+            <input type="text" class="bg-gray-100 w-full py-2 pl-8
+            border focus:outline-none ring-blue-300 focus:ring-4 rounded-md" id="name" [(ngModel)]="username" [ngModelOptions]="{standalone:true}">
+          </label>
+        </div>
+      <div class="font-poppins mx-4 mt-8">
+        <label for="password" class="relative flex items-center px-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute ml-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+          </svg>
+          <input type="password" class="bg-gray-100 w-full py-2 pl-8
+          border focus:outline-none ring-blue-300 focus:ring-4 rounded-md" id="password" [(ngModel)]="password" [ngModelOptions]="{standalone:true}">
+        </label>
+      </div>
+      <div class="flex justify-between mx-4 px-2 mt-2">
+        <h1 class="font-poppins-500"><span class="py-2 mr-1"><input type="checkbox" class="border focus:outline-none ring-blue-300 focus:ring-4 rounded-md h-4 w-4"></span>Remember me</h1>
+        <h1 class="text-blue-600 font-poppins-400 hover:text-blue-400"><a href="#">Forgot password?</a></h1>
+      </div>
+      <div class="mt-6 px-2 mx-4">
+        <button class="w-full bg-blue-500 py-2 rounded-md font-poppins-500 text-white hover:bg-blue-600" (click)="login()">Sign in</button>
+      </div>
+      <div class="mt-4 px-2 mx-4">
+        <button class="w-full bg-gray-100 py-2 rounded-md font-poppins-500 hover:bg-slate-200 flex items-center justify-center">
+
+          <svg class="h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+            <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+            <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+            <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+            <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+          </svg>
+
+          <span>Sign in with Google</span>
+        </button>
+      </div>
+      <div class="mx-4 px-2 mt-6 font-poppins-500 text-sm">
+        Don't have an account? <a routerLink="/register" class="text-blue-600 underline">sign up</a>
+      </div>
+    </div>
+    <div class="hidden sm:w-1/2 sm:h-full rounded-md overflow-hidden p-0.5 bg-blue-400 sm:flex sm:flex-col justify-center items-center">
+      <div class="w-80">
+        <img src="assets/login/img.png" alt="img" fill="image">
+      </div>
+      <div class="text-slate-200 font-poppins text-4xl mt-2">
+        Taskify
+      </div>
+      <div class="text-center text-white line-clamp-2 font-poppins text-lg whitespace-pre-wrap">
+        Powerful and manageable notes
+        service for your daily life
+      </div>
+    </div>
+  </div>
+</div>

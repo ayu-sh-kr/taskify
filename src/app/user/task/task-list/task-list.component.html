@@ -1,0 +1,36 @@
+@if (tasks.length != 0){
+  <div class="mx-auto w-full flex justify-center items-center container mt-10 flex-wrap gap-10" aria-hidden="true">
+    @for (task of tasks; track task.id){
+      <div class="bg-white shadow-md rounded-md w-[350px] h-[200px] px-5 py-3 relative">
+        <div class="hidden absolute w-[40%] flex-col right-5 top-8 bg-gray-300/80 rounded-md shadow-xl" [id]="'toggle' + task.id">
+          <div><a class="block hover:bg-white/80 w-full rounded p-2 hover:border-b-black border hover:cursor-pointer" (click)="updateTask(task, 'toggle' + task.id)">Edit</a></div>
+          <div><a class="block hover:bg-white/80 w-full rounded p-2 hover:border-b-black border hover:cursor-pointer" (click)="deleteTask(task)">Delete</a></div>
+        </div>
+        <div class="flex justify-end"><button (click)="toggleBtn('toggle' + task.id)"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 3">
+          <path d="M2 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm6.041 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM14 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Z"/>
+        </svg></button></div>
+        @if (task.status === 'Pending'){
+          <div class="text-red-400">{{task.status}}</div>
+        } @else if (task.status === 'Progress'){
+          <div class="text-yellow-400">{{task.status}}</div>
+        } @else {
+          <div class="text-green-400">{{task.status}}</div>
+        }
+        <div class="text-xl font-semibold font-poppins-500 mt-3">{{task.title}}</div>
+        <div class="line-clamp-2 text-lg font-poppins-500 font-light h-10">{{task.description}}</div>
+        <div class="flex justify-around mt-3">
+          <div><a (click)="updateStatus('Progress', task)" class="block px-3 py-1 bg-yellow-400 rounded-md hover:cursor-pointer">Progress</a></div>
+          <div><a (click)="updateStatus('Completed', task)" class="block px-3 py-1 bg-green-400 rounded-md hover:cursor-pointer">Complete</a></div>
+        </div>
+      </div>
+    }
+
+    @if (dialogueBox){
+      <div class="absolute flex justify-center items-center left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 min-w-full h-screen bg-black/50" (click)="dialogueBox = false">
+        <app-task-edit [(data)]="data" (dialogueBoxChange)="close($event)" class="" (click)="$event.stopPropagation()"></app-task-edit>
+      </div>
+    }
+  </div>
+} @else {
+  <p>task is empty</p>
+}
