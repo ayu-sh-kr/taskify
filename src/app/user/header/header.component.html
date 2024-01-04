@@ -1,8 +1,13 @@
-<div class="container mx-auto w-full flex justify-center gap-10 bg-orange-400 rounded-md shadow-md py-3">
-  <div><a routerLink="/home" class="block text-xl hover:bg-opacity-80 hover:bg-orange-200
+<div class="container mx-auto w-full flex justify-between gap-10 bg-orange-400 rounded-md shadow-md py-3">
+  <div class="hidden sm:flex justify-between items-center ml-5">
+    <div><a routerLink="/home" class="block text-xl hover:bg-opacity-80 hover:bg-orange-200
   px-4 py-1 rounded-md text-white font-semibold hover:text-orange-800">Tasks</a></div>
-  <div><a href="" class="block text-xl hover:bg-opacity-80 hover:bg-orange-200
+    <div><a routerLink="/profile" class="block text-xl hover:bg-opacity-80 hover:bg-orange-200
   px-4 py-1 rounded-md text-white font-semibold hover:text-orange-800">Profile</a></div>
-  <div><a routerLink="" class="block text-xl hover:bg-opacity-80 hover:bg-orange-200
+    <div><a routerLink="" class="block text-xl hover:bg-opacity-80 hover:bg-orange-200
   px-4 py-1 rounded-md text-white font-semibold hover:text-orange-800">Logout</a></div>
+  </div>
+  <div class="hidden sm:flex mr-5 ">
+    <h1 class="px-4 py-1 font-poppins-500 font-semibold text-xl">Welcome! <a href="/home" class="font-poppins-500 text-xl font-semibold text-red-950">User Name</a></h1>
+  </div>
 </div>

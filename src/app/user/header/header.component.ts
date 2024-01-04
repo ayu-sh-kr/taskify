@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {RouterLink} from "@angular/router";
+import {FetchService} from "../../service/api/fetch.service";
 
 @Component({
   selector: 'app-header',
@@ -11,5 +12,9 @@ import {RouterLink} from "@angular/router";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  userName!:string;
 
+  constructor(private fetch: FetchService) {
+    // console.log(fetch.getDetails());
+  }
 }

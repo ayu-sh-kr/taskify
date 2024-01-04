@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {JwtHelperService} from "@auth0/angular-jwt";
+import jwt_decode from 'jwt-decode';
 import {Router} from "@angular/router";
+import {HttpRequest} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import {Router} from "@angular/router";
 export class FetchService {
   // https://taskify-backend-app-3w9xe.ondigitalocean.app
   // http://localhost:8080
-  baseUrl:string = 'https://taskify-backend-app-3w9xe.ondigitalocean.app';
+  baseUrl:string = 'http://localhost:8080';
   jwtKey!:string;
   userId!:string;
 
@@ -32,6 +34,7 @@ export class FetchService {
       this.router.navigate(['']);
     }
   }
+
 
   private getHeader(){
       return {
@@ -180,6 +183,17 @@ export class FetchService {
       headers: this.getHeader(),
     });
 
+    const result = await response.text();
+    return {status: response.status, text: result};
+  }
+
+  async deleteWithData(apiUrl: string, data: any){
+    this.checkJwt();
+    const response = await fetch(this.baseUrl + apiUrl, {
+      method: 'DELETE',
+      headers: this.getHeader(),
+      body: data
+    });
     const result = await response.text();
     return {status: response.status, text: result};
   }

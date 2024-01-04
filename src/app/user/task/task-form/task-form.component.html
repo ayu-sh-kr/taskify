@@ -1,26 +1,47 @@
-<form class="w-80 mt-10 py-3 px-4 rounded-md shadow-md bg-white">
-  <div class="mx-3 text-3xl text-blue-600 font-poppins-500 font-semibold">
-    Create a Task
+<div class="mt-5 rounded-md overflow-hidden bg-blue-100 shadow-xl px-3 py-2">
+  <div class="hidden sm:block overflow-hidden h-56">
+    <img src="assets/task/task-from.png" alt="">
   </div>
-  <div class="mx-3 flex flex-col gap-3 mt-2">
-    <label for="title" class="font-poppins-500 text-xl">Title</label>
-    <input type="text" id="title" class="w-full bg-gray-200 rounded-md border
+
+  <div class="flex max-w-[750px]">
+    <div class="w-1/2 text-left p-4 hidden sm:block">
+      <h1 class="font-semibold text-xl font-poppins-500">Welcome to Quote</h1>
+      <p>
+        An mei sadipscing dissentiet, eos ea partem viderer facilisi. Brute nostrud democritum in vis,
+        nam ei erat zril mediocrem. No postea diceret vix. Mei eu scripta dolorum voluptatibus, id omnes repudiare pr
+      </p>
+    </div>
+    <div>
+      <form class="w-[375px] mt-5 py-3 px-4 rounded-md">
+        <div class="mx-3 text-3xl text-blue-600 font-poppins-500 font-semibold">
+          Create a Task
+        </div>
+        <div class="mx-3 flex flex-col gap-3 mt-2">
+          <label for="title" class="font-poppins-500 text-xl">Title</label>
+          <input type="text" id="title" class="w-full bg-white rounded-md border
     focus:outline-none focus:ring-4 focus:ring-blue-300 py-2 px-3" [(ngModel)]="title" [ngModelOptions]="{standalone:true}">
-  </div>
-  <div class="mx-3 flex flex-col gap-3 mt-2">
-    <label for="description" class="text-xl font-poppins-500">Description</label>
-    <textarea id="description" class="w-full rounded-md border
-    bg-gray-200 focus:outline-none focus:ring-4 focus:ring-blue-300 py-2 px-3" rows="4" cols="20" [(ngModel)]="description" [ngModelOptions]="{standalone:true}"></textarea>
-  </div>
-  <div class="mx-3 flex flex-col gap-3 mt-2">
-    <select class="font-poppins-500 bg-gray-200 shadow-md rounded-md px-3 py-2
+        </div>
+        <div class="mx-3 flex flex-col gap-3 mt-2">
+          <label for="description" class="text-xl font-poppins-500">Description</label>
+          <textarea id="description" class="w-full rounded-md border
+    bg-white focus:outline-none focus:ring-4 focus:ring-blue-300 py-2 px-3" rows="4" cols="20" [(ngModel)]="description" [ngModelOptions]="{standalone:true}"></textarea>
+        </div>
+        <div class="mx-3 flex flex-col gap-3 mt-2">
+          <select class="font-poppins-500 bg-white shadow-md rounded-md px-3 py-2
     focus:outline-none focus:ring-blue-300 focus:ring-1" [(ngModel)]="status" [ngModelOptions]="{standalone:true}">
-      <option value="Pending" selected>Pending</option>
-      <option value="Progress">Progress</option>
-      <option value="Completed">Completed</option>
-    </select>
+            <option value="Pending" selected>Pending</option>
+            <option value="Progress">Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+        <div class="mx-3 mt-2">
+          <button class="w-full bg-green-400 rounded-md py-2 font-poppins-500 font-semibold text-white" (click)="$event.preventDefault(); createTask()">Create</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="mx-3 mt-2">
-    <button class="w-full bg-green-400 rounded-md py-2 font-poppins-500 font-semibold text-white" (click)="$event.preventDefault(); createTask()">Create</button>
-  </div>
-</form>
+</div>
+
+
+
+
